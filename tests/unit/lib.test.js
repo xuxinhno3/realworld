@@ -42,6 +42,13 @@ describe('Unit Tests: Helpers & Utilities (lib.js)', () => {
       const [, ok] = lib.validatePositiveInteger('abc');
       expect(ok).toBe(false);
     });
+
+    test('8. should return true and 0 for string "0"', () => {
+      const [val, ok] = lib.validatePositiveInteger('0');
+      expect(ok).toBe(true);
+      expect(val).toBe(0);
+    });
+
   });
 
   describe('validateParam', () => {
