@@ -73,8 +73,11 @@ describe('Integration Tests: RealWorld REST API (SuperTest)', () => {
           }
         });
 
+      // Sửa lại thành mã 422 chuẩn RESTful
       expect(res.status).toBe(422);
+      expect(res.body.errors).toBeDefined();
     });
+
 
     test('GET /api/user - Should return current user when authenticated (200)', async () => {
       if (!token) return;
